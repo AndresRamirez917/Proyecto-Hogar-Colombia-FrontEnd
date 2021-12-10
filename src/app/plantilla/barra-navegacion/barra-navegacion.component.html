@@ -1,0 +1,31 @@
+<!-- ESTE CODIGO SE PEGO DE MATERIALIZA PARA EL NAVBAR-->
+<nav>
+  <div class="nav-wrapper blue">
+    <a routerLink="/inicio" class="material-icons prefix">location_city</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <!-- SE CAMBIARON LOS HREF POR ROUTERLINK Y SE CAMBIARON RUTAS Y ETIQUETAS-->
+      <!--DESDE AQUI SE TENDRA ACCESO A LAS OPCIONES QUE OFRECE LA APLICACION-->
+      <li *ngIf="seiniciosesion"><a routerLink="administracion/buscar-inmueble">Ver Inmueble</a></li>
+      <li *ngIf="seiniciosesion"><a routerLink="administracion/crear-inmueble">Crear Inmueble</a></li>
+      <li *ngIf="seiniciosesion"><a routerLink="administracion/buscar-empleado">Ver Empleado</a></li>
+      <li *ngIf="seiniciosesion"><a routerLink="administracion/crear-empleado">Crear Empleado</a></li>
+      <li *ngIf="seiniciosesion"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+      <li *ngIf="!seiniciosesion"><a routerLink="seguridad/identificar">Iniciar Sesión</a></li>
+    
+      
+      
+    </ul>
+  </div>
+</nav>
+
+<!--AUN NO SE HAN CAMBIADO ESTAS LINEAS-->
+<ul class="sidenav" id="mobile-demo">
+  <li *ngIf="seiniciosesion"><a routerLink="administracion/buscar-inmueble">Ver Inmueble</a></li>
+  <li *ngIf="seiniciosesion"><a routerLink="administracion/crear-inmueble">Crear Inmueble</a></li>
+  <li *ngIf="seiniciosesion"><a routerLink="administracion/buscar-empleado">Ver Empleado</a></li>
+  <li *ngIf="seiniciosesion"><a routerLink="administracion/crear-empleado">Crear Empleado</a></li>
+  <li *ngIf="seiniciosesion"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+  <li *ngIf="!seiniciosesion"><a routerLink="seguridad/identificar">Iniciar Sesión</a></li>
+</ul>
+        

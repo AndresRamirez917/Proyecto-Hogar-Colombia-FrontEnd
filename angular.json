@@ -27,9 +27,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "node_modules/materialize-css/dist/css/materialize.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/materialize-css/dist/js/materialize.min.js",
+              "src/assets/scripts/materialize-init.js",
+              "src/assets/scripts/funciones-generales.js",
+              "src/assets/initmodel.js",
+              "src/assets/funcionesmodal.js"
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -94,7 +103,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
+              
             ],
             "scripts": []
           }

@@ -1,0 +1,65 @@
+<!-- CODIGO HTML PARA EL FORMUALRIO DEL LOGIN-->
+
+<body class="align">
+
+    <div class="login">
+  
+      <header class="login__header blue">
+        <h2><svg class="icon">
+            <use xlink:href="#icon-lock" />
+          </svg>Sign In</h2>
+      </header>
+      <!-- EL FORMGROUP SE USA PARA PODER USAR LOS CONTROLES DE USUARIO Y CONSTRASEÑA-->
+      <!-- QUE PERTENECEN A FGVALIDADOR-->
+      <!-- NGSUBMIT LLAMA EL METODO IDENTIFICARUSUARIO PARA ALMACENAR LOS VALORES -->
+      <!-- QUE VAN A SER DIGITADOS EN LOS CAMPOS DE TEXTO-->
+      <form [formGroup]="fgValidador" (ngSubmit)="identificarusuario()" action="#" class="login__form" method="POST">
+  
+        <div>
+          <i class="material-icons prefix">account_circle</i>
+          <label for="usuario">E-mail address</label>
+          <!-- FORMCONTRLNAME PARA VINCULAR EN CAMPO DEL FORMULARIO CON EL METODO FGVALIDADOR-->
+          <!-- QUE CONTIENE LA PROPIEDAD USUARIO-->
+          <input formControlName='usuario' type="email" id="usuario" name="usuario" placeholder="mail@address.com">
+          <div *ngIf="GetForm['usuario'].errors && (GetForm['usuario'].dirty || GetForm['usuario'].touched)"  class ="error-message" >
+            <label>Por favor ingrese un correo electrónico</label>
+          </div>
+        </div>
+  
+        <div>
+          <i class="material-icons prefix">lock_outline</i>
+          <label for="contrasena">Password</label>
+          <!-- FORMCONTRLNAME PARA VINCULAR EN CAMPO DEL FORMULARIO CON EL METODO FGVALIDADOR-->
+          <!-- QUE CONTIENE LA PROPIEDAD CONSTRASEÑA-->
+          <input formControlName='contrasena' type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+          <div *ngIf="GetForm['contrasena'].errors && (GetForm['contrasena'].dirty || GetForm['contrasena'].touched)"  class ="error-message" >
+            <label>Por favor ingrese una contraseña</label>
+          </div>
+        </div>
+  
+        <div>
+          <!-- [DISABLED]="!FGVALIDADDOR.VALID DESHABILITA EL BOTON SI LOS CAMPOS USUARIO"-->
+          <!-- Y CONTRASEÑA NO CUMPLEN CON LOS REQUERIMIENTOS ESTABLECIDOS-->
+          <button [disabled]="!fgValidador.valid" class= "btn btn-large btn-register waves-effect waves-light" type="submit" name="action">Comprobar
+            <i class="material-icons right">check</i>
+      </button>
+          <!--
+          <input [disabled]="!fgValidador.valid" class="button"  type="submit" value="Sign In">
+        -->
+        </div>
+  
+      </form>
+  
+    </div>
+  
+    <svg xmlns="http://www.w3.org/2000/svg" class="icons">
+  
+      <symbol id="icon-lock" viewBox="0 0 448 512">
+        <path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z" />
+      </symbol>
+  
+    </svg>
+  
+  </body>
+  
+  <!-- https://fontawesome.com/icons/lock?style=solid -->

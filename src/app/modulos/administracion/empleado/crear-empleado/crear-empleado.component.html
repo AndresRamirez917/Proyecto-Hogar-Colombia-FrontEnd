@@ -1,0 +1,55 @@
+<fieldset>
+    <legend>Formulario Registro Empleados</legend>
+<div class="row">
+    <form [formGroup]="fgValidador" (ngSubmit)="guardarempleado()" class="col s12" id="reg-form">
+      <div class="row">
+        <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+          <input id="nombre" formControlName ="nombre" type="text">
+          <label for="nombre">Nombre Completo</label>
+          <div *ngIf="GetForm['nombre'].errors && (GetForm['nombre'].dirty || GetForm['nombre'].touched)"  class ="error-message" >
+            <label>Por favor ingrese un nombre</label>
+          </div>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">assignment_ind</i>
+          <input id="cargo" formControlName ="cargo" type="text">
+          <label for="cargo">Cargo</label>
+          <div *ngIf="GetForm['cargo'].errors && (GetForm['cargo'].dirty || GetForm['cargo'].touched)"  class ="error-message" >
+            <label>Por favor ingrese un cargo</label>
+          </div>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">face</i>
+            <input id="usuario" formControlName ="usuario" type="text">
+            <label for="usuario">Usuario</label>
+            <div *ngIf="GetForm['usuario'].errors && (GetForm['usuario'].dirty || GetForm['usuario'].touched)"  class ="error-message" >
+              <label>Por favor ingrese un usuario</label>
+            </div>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">lock_outline</i>
+          <input id="contrasena" formControlName ="contrasena" type="password">
+          <label for="contrasena">contraseña</label>
+          <div *ngIf="GetForm['contrasena'].errors && (GetForm['contrasena'].dirty || GetForm['contrasena'].touched)"  class ="error-message" >
+            <label>Por favor ingrese una contraseña</label>
+          </div>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">email</i>
+            <input id="email" formControlName ="email" type="email">
+            <label for="email">E-mail</label>
+            <div *ngIf="GetForm['email'].errors && (GetForm['email'].dirty || GetForm['email'].touched)"  class ="error-message" >
+              <label>Por favor ingrese un correo electrónico</label>
+            </div>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">assignment_ind</i>
+            <button class="btn btn-large btn-register waves-effect waves-light" type="submit" name="action">Registrar
+              <i class="material-icons right">send</i>
+          </button>
+        </div> 
+      </div>
+    </form>
+  </div>
+</fieldset>

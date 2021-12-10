@@ -1,0 +1,88 @@
+<div class="row">   
+<a routerLink="/administracion/crear-empleado" class="btn">Crear Empleado</a>
+<!-- 
+    <button class="btn btn-register waves-effect waves-light" type="submit" name="action">Registrar
+        
+        <i class="material-icons right">done</i>
+  </button>  
+  -->
+<table class="table responsive"> 
+    <thead>
+        <tr> 
+        <th>
+            <div class="input-field col s6">
+            Nombre
+        </div>
+        </th>
+        <th>
+            <div class="input-field col s6">
+            Cargo
+        </div>
+        </th>
+        <th>
+            <div class="input-field col s6">
+            Usuario
+        </div>
+        </th>
+        <th>
+            <div class="input-field col s6">
+            Contraseña
+        </div>
+        </th>
+        <th>
+            <div class="input-field col s6">
+            E-mail
+        </div>
+        </th>
+        <th>
+            <div class="input-field col s6">
+            Editar
+        </div>
+        </th>
+    </tr>
+    </thead >
+    <tbody>                                     <!-- 11/23 DESDE EL | EN ADELANTE HASTA } PARA LA PAGINACION-->
+        <tr *ngFor="let p of listadoregistros | paginate: { itemsPerPage: 4, currentPage: p }" >
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.cargo}}
+            </td>
+            <td>
+                {{p.usuario}}
+            </td>
+            <td>
+                {{p.contrasena}}
+            </td>
+            <td>
+                {{p.email}}
+            </td>
+                   
+            <div class="input-field col s12">
+                    <a class="waves-effect waves-light" routerLink="/administracion/editar-empleado/{{p.id}}" class="btn orange">Editar</a>
+                    
+                    <!--&nbsp;-->
+                    &nbsp;
+                    <button class="btn red waves-effect waves-light" type="button" (click)="verificareliminacion(p.id, p.nombre)" name="action">Eliminar
+                        <i class="material-icons right">delete</i>
+                    </button> 
+                </div>
+                 
+                <!--
+                <a routerlink="/administracion/editar-empleado/{{p.id}}" class="btn">Editar Empleado</a>
+               -->
+                
+           <!--
+                <button class="btn red waves-effect waves-light" type="button" (click)="verificareliminacion()" name="action">Eliminar</button>
+            <i class="material-icons right">delete</i>
+            
+           -->
+        
+        </tr> 
+    
+    </tbody>
+
+</table> <!--11/23 LINEA PARA MOSTRAR LOS CONTROLES DE CAMBIO DE PAGINA-->
+<pagination-controls (pageChange)="p = $event"></pagination-controls> 
+</div>

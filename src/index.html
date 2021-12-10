@@ -1,13 +1,50 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>FrontEndPHC</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--ESTE CODIGO SE COPIA DE MATERIALIZE, ES EL PRIMER PASO PARA USAR MATERIALIZE-->
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      
+      <!--DE ESTE ARCHIVO SE BORRAN DOS LINEAS Y SE PEGAN EN EL ARCHIVO ANGULAR.JSON-->
+      <!--LAS LINEAS SON node_modules/materialize-css/dist/css/materialize.min.css-->
+      <!--y node_modules/materialize-css/dist/js/materialize.min.js-->
+      <!--DENTRO DE LAS PRIMERAS LLAVES STYLES Y SCRIPT-->
+
+      <!--ESTA LINEA ASIGNA LA RUTA A LA RAZI PARA CARGARA EL TEMPLATE-->
+      <base href='/' />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
-</body>
-</html>
+    
+    <body class="mat-typography">
+      <app-root></app-root> 
+    </body>
+    <app-root></app-root>  
+    <!-- Modal Structure 
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div> 
+  -->
+  <!-- Modal Structure -->
+  <div id="modal-general-message" class="modal">
+    <div class="modal-content">
+      <h4>Mensaje Del Sistema</h4>
+      <p id="pmessagetext"></p>
+    </div>
+    <div class="modal-footer">
+      <!-- para que el modal funcionara se le quito el boton en este punto -->
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat"></a>
+    </div>
+  </div>
+  </html>
+   
+
